@@ -1,0 +1,23 @@
+.ReactTable .rt-thead .rt-th,
+.ReactTable .rt-thead .rt-td {
+  border-right: none;
+}
+.rt-resizable-header {
+  display: none !important;
+}
+.ReactTable {
+  border: 1px solid rgba(0, 0, 0, 0.0);
+}
+.ReactTable .rt-tbody .rt-tr-group {
+  border-bottom: none;
+  border: none !important;
+}
+.-header {
+  border: none;
+  display: none;
+  box-shadow: none !important;
+}
+.ReactTable .rt-th,
+.ReactTable .rt-td {
+  white-space: pre-wrap;
+}

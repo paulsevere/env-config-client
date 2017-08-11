@@ -1,0 +1,64 @@
+@import "./colors.scss";
+@import "./table_reset.scss";
+
+body {
+  background: $off-black;
+  font-family: 'Roboto Mono';
+  padding: 100px;
+}
+
+.value {
+  color: $cool-blue;
+  text-overflow: ellipsis;
+  overflow-wrap: break-word;
+}
+.action {
+  display: none;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.name {
+  color: $dark-green;
+  float: right;
+}
+
+.row {
+  display: flex;
+}
+.name-row {
+  text-align: right;
+  justify-content: flex-end;
+}
+
+@mixin action($name, $color, $sub) {
+  @if $sub {
+    .#{$name} {
+      color: $color;
+      display: inline-block;
+    }
+    .#{$name}:hover {
+      display: inline-block;
+      text-decoration: underline;
+    }
+  } @else {
+    .#{$name} {
+      display: none;
+      color: $color;
+    }
+  }
+}
+
+@include action("delete",$awesome-red, false );
+@include action("delete",$slight-yellow, false );
+
+.rt-tr-group:hover {
+  @include action("delete",$awesome-red, true );
+  @include action("edit",$slight-yellow, true );
+}
+
+.path-value {
+  display: flex;
+  flex-wrap: wrap;
+  // display: block;
+}
